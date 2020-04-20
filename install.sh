@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Checking requirements..."
 # Xdotool installed check
-command -v xdotool >/dev/null 2>&1 || { echo >&2 "I require xdotool but it's not installed! Aborting."; exit 1; }
+command -v ydotool >/dev/null 2>&1 || { echo >&2 "I require ydotool but it's not installed! Aborting."; exit 1; }
 
 echo "Compiling code..."
 # Compilation
