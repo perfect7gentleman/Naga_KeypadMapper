@@ -20,6 +20,7 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <linux/input.h>
+#include <linux/input-event-codes.h>
 #include <sys/select.h>
 #include <cstring>
 #define DEV_NUM_KEYS 12
@@ -213,12 +214,12 @@ public:
     //Only accept press or release events
     if(eventCode>1) return;
 
-    const string keydownop = "xdotool keydown --window getactivewindow ";
-    const string keyupop = "xdotool keyup --window getactivewindow ";
-    const string clickop = "xdotool click ";
-    const string workspace_r = "xdotool set_desktop --relative -- ";
-    const string workspace = "xdotool set_desktop ";
-    const string position = "xdotool mousemove ";
+    const string keydownop = "ydotool key --down ";
+    const string keyupop = "ydotool key --up ";
+    const string clickop = "ydotool click ";
+    const string workspace_r = "ydotool set_desktop --relative -- ";
+    const string workspace = "ydotool set_desktop ";
+    const string position = "ydotool mousemove ";
     int pid;
     unsigned int delay;
     string command;
