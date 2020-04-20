@@ -1,17 +1,9 @@
 # Naga_KeypadMapper
-This little linux xorg daemon allows you to map the side keypad of the Razer Naga series mice via a configuration file called `mapping_xx.txt` under `$HOME/.naga/` 
-Requires: `xdotool` and an X server environment to work.
+This little linux Wayland daemon allows you to map the side keypad of the Razer Naga series mice via a configuration file called `mapping_xx.txt` under `$HOME/.naga/` 
+Requires: `ydotool` and s Wayland environment to work.
 
 Currently tested with:  
-- Razer Naga Epic Chroma in CentOS 7  
-- Razer Naga Epic (pre-2014 version) in Ubuntu 14.04, 15.04, 15.10  
-- Razer Naga (RZ01-0028) (thanks to khornem) in Ubuntu 14.04  
-- Razer Naga 2014 (thanks to Destroyer) in Ubuntu 15.04, 15.10  
-- Razer Naga Molten (thanks to noobxgockel) in Linux Mint 17.02  
-- Razer Chroma (thanks to felipeacsi) in Manjaro
-- Razer Naga 2012 (RZ01-0058) (thanks to mrlinuxfish, brianfreytag) in Arch Linux, Ubuntu 16.04
-- Razer Naga Chroma (thanks to ipsod) in Linux Mint KDE 18.1
-- Razer Naga Trinity (thanks to haringsrob and ws141)
+- Razer Naga 2014 (thanks to me) in Gentoo
 
 This daemon does not, in any case modify any system file nor property of any device. So the process is totally reversible just by deleting the files and at most rebooting. 
 
