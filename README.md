@@ -1,6 +1,6 @@
 # Naga_KeypadMapper
 This little linux Wayland daemon allows you to map the side keypad of the Razer Naga series mice via a configuration file called `mapping_xx.txt` under `$HOME/.naga/` 
-Requires: `ydotool` and s Wayland environment to work.
+Requires: `ydotool` and Wayland environment to work.
 
 Currently tested with:  
 - Razer Naga 2014 (thanks to me) in Gentoo
@@ -52,7 +52,7 @@ Button number | Info
 8 | 4th button (aka backward button)
 9 | 5th button (aka forward button)
 ### KEYBOARD FUNCTION (key)
-For mapping a key from keyboard you need to look up your key e.g. here: http://cgit.freedesktop.org/xorg/proto/x11proto/plain/keysymdef.h . You need to exclude the beginning `XK_` so for example caps lock would be `Caps_Lock`. 
+For mapping a key from keyboard you need to look up your key e.g. here: /usr/include/linux/input-event-codes.h . You need to exclude the beginning `KEY_` so for example caps lock would be `Capslock`. 
 If you want to test your shortcut you can use `xdotool key --window getactivewindow KEYorSHORTCUT` . If no error appears the shortcut works. **Keep in mind this not only tests but also executes the shortcut.**
 ### NOTES
 If the `$HOME/.naga/mapping_01.txt` file is missing the daemon won't start (the program will NOT autocreate this file, the install.sh script will copy example files though).
@@ -84,10 +84,10 @@ An example `mapping_xx.txt` configuration file is the following:
 
 If you want to dig more into configuration, you might find these tools useful: `xinput`, `evtest`
 
-Keep in mind that any non existing functionality can be created through the "run" option, at the end of the day naga just calls xdotools, which can be done from a script.  
+Keep in mind that any non existing functionality can be created through the "run" option, at the end of the day naga just calls ydotool, which can be done from a script.  
 ## INSTALLATION
 
-KeypadMapper does not need any dependencies besides having installed `xdotool` http://www.semicomplete.com/projects/xdotool/  (in the oficial ubuntu, fedora, centOS, etc repositories) and g++
+KeypadMapper does not need any dependencies besides having installed `ydotool` https://github.com/ReimuNotMoe/ydotool/  (in the oficial ubuntu, fedora, centOS, etc repositories) and g++
 
 Change `src/naga.cpp` to adapt the installation to another device, using different inputs and/or different key codes than the Naga Epic, 2014, Molten or Chroma. For Example, Epic Chroma is compatible with Epic (they have the same buttons), so you would only have to add an additional line to the devices vector.
 
@@ -125,7 +125,3 @@ This lasts until the x server is restarted (`nagastart.sh` is aware of this), bu
 ## UNINSTALLATION
 
 To uninstall you just need to run ```$bash uninstall.sh```.
-
-
-
-
