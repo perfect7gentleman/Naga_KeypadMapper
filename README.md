@@ -53,7 +53,7 @@ Button number | Info
 9 | 5th button (aka forward button)
 ### KEYBOARD FUNCTION (key)
 For mapping a key from keyboard you need to look up your key e.g. here: /usr/include/linux/input-event-codes.h . You need to exclude the beginning `KEY_` so for example caps lock would be `Capslock`. 
-If you want to test your shortcut you can use `xdotool key --window getactivewindow KEYorSHORTCUT` . If no error appears the shortcut works. **Keep in mind this not only tests but also executes the shortcut.**
+If you want to test your shortcut you can use `ydotool key KEYorSHORTCUT` . If no error appears the shortcut works. **Keep in mind this not only tests but also executes the shortcut.**
 ### NOTES
 If the `$HOME/.naga/mapping_01.txt` file is missing the daemon won't start (the program will NOT autocreate this file, the install.sh script will copy example files though).
 
