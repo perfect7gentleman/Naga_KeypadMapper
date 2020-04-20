@@ -19,7 +19,7 @@
 #include <fcntl.h>
 #include <dirent.h>
 #include <unistd.h>
-#include <linux/input.h>
+#include <linux/uinput.h>
 #include <linux/input-event-codes.h>
 #include <sys/select.h>
 #include <cstring>
