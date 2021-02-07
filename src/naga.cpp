@@ -214,9 +214,9 @@ public:
     //Only accept press or release events
     if(eventCode>1) return;
 
-    const string keydownop = "ydotool key --down ";
-    const string keyupop = "ydotool key --up ";
-    const string clickop = "ydotool click ";
+    const string keydownop = "ydotool key --down --delay 0 ";
+    const string keyupop = "ydotool key --up --delay 0 ";
+    const string clickop = "ydotool click --delay 0 ";
     const string workspace_r = "ydotool set_desktop --relative -- ";
     const string workspace = "ydotool set_desktop ";
     const string position = "ydotool mousemove ";
