@@ -6,7 +6,7 @@ command -v ydotool >/dev/null 2>&1 || { echo >&2 "I require ydotool but it's not
 echo "Compiling code..."
 # Compilation
 cd src
-g++ -O3 -std=c++11 naga.cpp -o naga
+g++ -march=native -mtune=native -O3 -pipe -fdata-sections -fdevirtualize-at-ltrans -ffunction-sections -fgraphite-identity -fipa-pta -flto=9 -flto-compression-level=9 -floop-interchange -floop-nest-optimize -floop-parallelize-all -fomit-frame-pointer -fuse-linker-plugin -fno-asynchronous-unwind-tables -fno-plt -fno-semantic-interposition -fno-stack-protector -s naga.cpp -o naga
 
 if [ ! -f ./naga ]; then
 	echo "Error at compile! Ensure you have gcc installed Aborting"
